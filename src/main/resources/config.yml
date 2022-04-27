@@ -1,0 +1,41 @@
+#
+# EquipmentSlot :
+#   HEAD,CHEST,LEGS,FEET,HAND,OFF_HAND
+# PotionEffect :
+#   https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+# AttributeModifier :
+#   https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/attribute/Attribute.html
+#
+
+Items:
+  - Test1
+  - Test2
+
+Test1:
+  Material: GRASS
+  Name: TestItem
+  Lore:
+    - メインハンドに持っていると透明化します
+  Effects:
+    - INVISIBILITY
+  INVISIBILITY:
+    Level: 1
+  Attribute:
+    Name: GENERIC_ATTACK_DAMAGE
+    Amount: 100
+  Slot: HAND
+
+
+Test2:
+  Material: GRASS_BLOCK
+  Name: TestItem2
+  Lore:
+    - メインハンドに持っていると透明化しコンジットパワーを得ます
+  Effects:
+    - INVISIBILITY
+    - CONDUIT_POWER
+  INVISIBILITY:
+    Level: 1
+  CONDUIT_POWER:
+    Level: 1
+  Slot: HAND

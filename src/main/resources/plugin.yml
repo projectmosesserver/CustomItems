@@ -1,0 +1,6 @@
+name: CustomItems
+version: '${project.version}'
+main: info.ahaha.customitems.CustomItems
+api-version: 1.17
+commands:
+  ci:
