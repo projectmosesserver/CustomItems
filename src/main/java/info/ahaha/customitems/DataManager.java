@@ -1,5 +1,6 @@
 package info.ahaha.customitems;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -23,12 +24,12 @@ public class DataManager {
 
         config = YamlConfiguration.loadConfiguration(configfile);
 
-        InputStream configStream = plugin.getResource("config.yml");
+        /*InputStream configStream = plugin.getResource("config.yml");
 
         if (configStream != null) {
             YamlConfiguration configs = YamlConfiguration.loadConfiguration(new InputStreamReader(configStream));
             config.setDefaults(configs);
-        }
+        }*/
 
     }
 
@@ -45,8 +46,9 @@ public class DataManager {
         if (configfile == null)
             configfile = new File(plugin.getDataFolder(), "config.yml");
 
-        if (!configfile.exists())
+        if (!configfile.exists()){
             plugin.saveResource("config.yml", false);
+        }
 
     }
 }

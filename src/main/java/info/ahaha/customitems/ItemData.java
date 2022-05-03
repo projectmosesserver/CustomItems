@@ -1,5 +1,6 @@
 package info.ahaha.customitems;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -20,8 +21,8 @@ public class ItemData {
     private List<String> lore;
     private EquipmentSlot slot;
     private List<PotionEffect> effects;
-    private Attribute attribute;
-    private AttributeModifier modifier;
+    private final Attribute attribute;
+    private final AttributeModifier modifier;
     private ItemStack item;
     public static List<ItemData> data = new ArrayList<>();
 
@@ -98,8 +99,8 @@ public class ItemData {
             meta.setLore(getLore());
         PersistentDataContainer container = meta.getPersistentDataContainer();
         container.set(CustomItems.plugin.getKey(), PersistentDataType.STRING, getName());
-        if (modifier != null && attribute != null){
-            meta.addAttributeModifier(attribute,modifier);
+        if (getModifier() != null && getAttribute() != null){
+            meta.addAttributeModifier(getAttribute(),getModifier());
         }
         item.setItemMeta(meta);
     }
