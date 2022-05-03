@@ -25,7 +25,7 @@ public class CreateItemData {
             List<String> lore = manager.getConfig().getStringList(item + ".Lore");
             List<PotionEffect> effects = new ArrayList<>();
             for (String potion : manager.getConfig().getStringList(item + ".Effects")) {
-                PotionEffect effect = new PotionEffect(PotionEffectType.getByName(potion), 99999, manager.getConfig().getInt(item + "." + potion), true, true, true);
+                PotionEffect effect = new PotionEffect(PotionEffectType.getByName(potion), 99999, manager.getConfig().getInt(item + "." + potion+".Level")-1, true, true, true);
                 effects.add(effect);
             }
             EquipmentSlot slot = EquipmentSlot.valueOf(manager.getConfig().getString(item + ".Slot"));
